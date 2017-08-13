@@ -1,10 +1,9 @@
 import pandas as pd
-import csv
 
 books_url = 'BX-CSV-Dump/BX-Books.csv'
 
-'''imports only first 5 relevant columns (others are just image urls), uses latin1 encoding while it otherwise reported error,
-uses different separator while quotechar didnt work '''
+# imports only first 5 relevant columns (others are just image urls), uses latin1 encoding while it otherwise reported
+# error, uses different separator while quotechar didnt work
 books = pd.read_csv(books_url, sep='";"', skipinitialspace=True, error_bad_lines=False, encoding='latin1',
                     usecols=[0, 1, 2, 3, 4])
 
