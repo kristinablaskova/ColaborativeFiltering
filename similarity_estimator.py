@@ -33,7 +33,7 @@ print(lotr_reader)
 print(dune_reader)
 
 
-#picks users that read at least one of the dune books AND at least one of the lotr books
+# picks users that read at least one of the dune books AND at least one of the lotr books
 def calculate_similar(user, others: pd.DataFrame):
     """Calculates similarity between user and other users ratings. Picks users that read at least on of Dune and one
     of Lotr books.
