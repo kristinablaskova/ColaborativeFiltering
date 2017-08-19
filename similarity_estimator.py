@@ -8,7 +8,7 @@ lotr_books = pd.read_csv('BX-CSV-Dump/tolkien_lotr.csv', sep=';', error_bad_line
 dune_books = pd.read_csv('BX-CSV-Dump/frank_herbert_dune.csv', sep=';', error_bad_lines=False, encoding='latin1')
 
 
-# generates the reader and assigns him an User-ID and rating for the books he likes
+# generates the reader and assigns him a User-ID and rating for the books he likes
 def generate_reader(books, uid=12345678, rating=10):
     """Generates reader DataFrame by books he should like and assigns his rating.
 
@@ -47,7 +47,7 @@ def calculate_similar(user, others: pd.DataFrame):
 
     dune_raters = others[others['ISBN'].isin(dune_reader['ISBN'])]
     lotr_raters = others[others['ISBN'].isin(lotr_reader['ISBN'])]
-    # After small experiments I decided to let users who doesn't rate books in set of all users.
+    # After small experiments I decided to let users who don't rate books in set of all users.
     # Because their similarity was low, but it yielded much larger collection of possibly interesting books.
     # That other much more similar to NEW (UNKNOWN) user might like.
     # Most importantly it boosted popularity (Readers-Count) that is used to compute final score.
